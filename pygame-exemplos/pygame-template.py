@@ -21,6 +21,8 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('My game')
 clock = pygame.time.Clock()
 
+#Lista de sprites
+all_sprites = pygame.sprite.Group()
 
 #Loop do jogo
 running = True
@@ -36,7 +38,10 @@ while running:
             running = False
 
     #Atualiza
+    all_sprites.update()
 
     #Desenha / renderiza
     screen.fill(BLACK)
+    all_sprites.draw(screen)
+    
     pygame.display.flip()
